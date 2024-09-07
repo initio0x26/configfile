@@ -1,0 +1,16 @@
+rtsp://admin:admin@192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif
+
+Unable to open input rtsp://192.168.1.108:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif due to: Server returned 401 Unauthorized (authorization failed)
+
+
+Public hostname
+ssh-cctv.aeromys.online
+
+
+setting 
+ssh-keygen -R ssh-pc.aeromys.online
+
+#config
+Host ssh-pc.aeromys.online
+ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+
