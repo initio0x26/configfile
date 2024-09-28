@@ -8,9 +8,11 @@ ssh-cctv.aeromys.online
 
 
 setting 
-ssh-keygen -R ssh-pc.aeromys.online
+ssh-keygen -R ssh-cctv.aeromys.online
+
+ssh-keygen -t rsa -f ~/.ssh/gcp_ssh -C cctv
 
 #config
-Host ssh-pc.aeromys.online
+Host ssh-cctv.aeromys.online
 ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
 
