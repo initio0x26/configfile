@@ -1,1 +1,1 @@
-
+raster2pgsql -I -C -t auto -s 4326 2306_Sorowako_Petea_2m.tif public.sorowako | psql -d PTVI_minegis -h localhost -U postgre
