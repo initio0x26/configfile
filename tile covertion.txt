@@ -1,0 +1,16 @@
+#convert geotif to shp
+gdal_contour -a elev -i 10 Sorowako_Petea_2m.tif /home/mapsfile/vectortile/contours.shp
+prerequest qgis + gdal
+input_dem.tif: GeoTIFF input (misalnya, Digital Elevation Model atau DEM).
+output_contours.shp: File shapefile output yang berisi kontur.
+-a elev: Menambahkan atribut ketinggian pada kontur.
+-i 10: Menentukan interval kontur.
+
+
+convert to vector tile
+prerequest
+git clone https://github.com/mapbox/tippecanoe.git
+cd tippecanoe
+make
+sudo make install
+tippecanoe -o output.mbtiles -l layer_name input_contours.shp
